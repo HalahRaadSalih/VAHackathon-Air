@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html ng-app="air">
+<html ng-app='air'>
 <head>
 	<title>Air</title>
-	<base href="/">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css"></link>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js"></script>
-	<script type="text/javascript" src="../js/controller.js"></script>
-	<script type="text/javascript" src="../js/filters.js"></script>
-	<script type="text/javascript" src="../js/services.js"></script>
-	<script type="text/javascript" src="../app.js"></script>
+
+
+
 </head>
 <body>
-<div class="navbar navbar-inverse">
-	<div class="container">
-		<div class="navbar-header">
-			<a class="navbar-brand">
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand">
 				<i class="fa fa-coffee text-danger"></i>
-				<li><a href="#home">Welcome</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#posts">Posts</a></li>
-			</a>
+					<li><a href="/#/home">Welcome</a></li>
+					<li><a href="/#/contact">Contact</a></li>
+					<li><a href="/#/about">About</a></li>
+					<li><a href="/#/posts">Posts</a></li>
+				</a>
+			</div>
+
 		</div>
 	</div>
-</div>
-<div ng-view>
 
-</div>
-<div class="navbar navbar-fixed-bottom navbar-inverse">
-	<div class="container">
-		<p class="navbar-text">Cairo</p>
+	<div ng-view>
+
 	</div>
-</div>
+	<div class="navbar navbar-fixed-bottom navbar-inverse">
+		<div class="container">
+			<p class="navbar-text">Cairo</p>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="/client/app.js"></script>
+	<script type="text/javascript" src="/client/js/controller.js"></script>
+	<script type="text/javascript" src="/client/js/filters.js"></script>
+	<script type="text/javascript" src="/client/js/services.js"></script>
+
 </body>
 </html>

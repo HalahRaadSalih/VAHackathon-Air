@@ -1,9 +1,12 @@
 var app = angular.module('air', ['ngRoute']);
+
 app.config(function($routeProvider){
-    $routeProvider.when('/', {
-        templateUrl: "./views/templates/home.html",
+    $routeProvider
+    .when('/', {
+        templateUrl: "/client/views/templates/home.html",
         controller: "HomeController"
-    }).when('/posts', {
+    })
+    .when('/posts', {
         templateUrl: "./views/templates/posts.html",
         controller: "PostsController"
     }).when('/contact', {
