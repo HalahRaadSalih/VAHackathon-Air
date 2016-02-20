@@ -10,10 +10,10 @@ app.config(function($routeProvider){
         templateUrl: "./views/templates/posts.html",
         controller: "PostsController"
     }).when('/contact', {
-        templateUrl: "./views/templates/contact.html",
+        templateUrl: "templates/contact.html",
         controller: "ContactController"
     }).when('/about', {
-        templateUrl: "./views/templates/about.html",
+        templateUrl: "templates/about.html",
         controller: "AboutController"
     }).otherwise({
         redirectTo: "/"
