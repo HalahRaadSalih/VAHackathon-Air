@@ -1,6 +1,7 @@
 var app = angular.module('air', ['ngRoute']);
 app.config(function($routeProvider){
     $routeProvider.when('/', {
+<<<<<<< HEAD
         templateUrl: "./templates/home.html",
         controller: "HomeController"
     }).when('/posts', {
