@@ -14,5 +14,5 @@ app.config(function($routeProvider){
         controller: "AboutController"
     }).otherwise({
         redirectTo: "/"
-    })
+    });
 });
