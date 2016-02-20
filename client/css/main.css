@@ -2,3 +2,7 @@ body {
 	font-size: 16px;
 	margin-bottom: 2em;
 }
+
+.navbar.navbar-default {
+	border-radius: 0;
+}

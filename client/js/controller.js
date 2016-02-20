@@ -1,12 +1,13 @@
-app.controller("HomeController", function($scope, $location){
+angular.module('air')
+.controller("HomeController", function($scope, $location){
 
-});
-app.controller("ContactController", function($scope, $location){
+})
+.controller("ContactController", function($scope, $location){
 
-});
-app.controller("AboutController", function($scope, $location){
+})
+.controller("AboutController", function($scope, $location){
 
-});
-app.controller("PostsController", function($scope, $location){
+})
+.controller("PostsController", function($scope, $location){
 
 });
