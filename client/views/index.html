@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="air">
 <head>
 	<title>Air</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -19,13 +19,17 @@
 	<div class="container">
 		<div class="navbar-header">
 			<a class="navbar-brand">
-				<i class="fa fa-coffee text-danger"></i> Welcome
+				<i class="fa fa-coffee text-danger"></i>
+				<li><a href="#home">Welcome</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#posts">Posts</a></li>
 			</a>
 		</div>
 	</div>
 </div>
 <div ng-view>
-	
+
 </div>
 <div class="navbar navbar-fixed-bottom navbar-inverse">
 	<div class="container">
