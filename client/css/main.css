@@ -10,6 +10,13 @@ body {
 	border-radius: 0;
 	margin-bottom: 0;
 }
+.navbar-brand>img {
+	top: 0;
+	height: 30px;
+	width: 200px;
+	padding: 0;
+	margin: 0;
+}
 
 .container {
   max-width: 960px;
