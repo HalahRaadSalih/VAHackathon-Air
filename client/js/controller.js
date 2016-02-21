@@ -10,3 +10,7 @@ app.controller('ContactsController', function(){
 app.controller('DashboardClient', function(){
 	console.log('DashboardClient');
 });
+
+app.controller('DashboardFull', function(){
+	console.log('DashboardFull');
+});

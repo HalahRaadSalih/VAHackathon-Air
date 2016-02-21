@@ -14,4 +14,8 @@ app.config(function($routeProvider){
         templateUrl: "/client/views/dashboard.html",
         controller: "DashboardClient"
     })
+    .when('/dashboardFull', {
+        templateUrl: "/client/views/dashboardFull.html",
+        controller: "DashboardFull"
+    })
 });
