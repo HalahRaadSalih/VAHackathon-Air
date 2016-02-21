@@ -1,54 +1,62 @@
-<br>
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="row jumbotron">
-        <div class="row">
+
+<a ng-click="showF()"><i class="fa fa-plus"></i> Submit Post</a></li>
+
+
+  <div class="container-fluid col-md-offset-1 col-md-10 slide" ng-show="showForm">
+    <form name="myForm">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="be creative" class="form-control" ng-model="item.title" validate ng-required="true">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea name="description" class="form-control" ng-model="item.description" validate ng-required="true"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input type="text" name="author" class="form-control" ng-model="item.author" validate ng-required='true'>
+      </div>
+      <div class="form-group">
+        <label for="image">Image Url:</label>
+        <input type="text" name="image" class="form-control" ng-model="item.image" validate ng-required="true">
+      </div>
+      <div class="form-group">
+        <button ng-click="addPost(item, myForm)" type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="contaniner-fluid col-md-offset-1 col-md-10">
+  <div>
+
+    <div class="slide" ng-repeat="item in items | filter:search.string | orderBy: category:sortReverse">
+    <div class="jumbotron slide">
+      <div class="row slide">
+        <p>Rep: {{item.reputation}}</p>
+        <img ng-src='{{item.image}}' alt="placebear"  class="col-md-4 display-image" />
+        <h3 class="col-md-10"><b>{{item.title}}</b> <span href="#" ng-click="upVote(item)"><i class="fa fa-thumbs-o-up"></i></span> <span ng-click="downVote(item)"><i class="fa fa-thumbs-o-down"></i></span> <span ng-class="{ positive: item.votes > 0, negative: item.votes < 0, nothing: item.votes === 0}">{{item.votes}}</span></h3>
+        <p class="col-md-8 text-left">{{item.description}}</p>
+        <p class="col-md-offset-2 col-md-8 small"><time>{{item.createdAt | amCalendar}}</time> | postedBy: <b>{{item.author}} | <a ng-click="showComments(item)"><ng-pluralize count="item.comments.length"
+                    when="{'0': 'no comments yet',
+                        '1': 'comment',
+                           'other': 'comments'}">
+            </ng-pluralize>: {{item.comments.length}}</a> | <a ng-click="addAComment(item)">add a comment</a></b></p>
+      </div>
+      <div ng-repeat="comment in item.comments track by $index" class="slide">
+        <div ng-show="item.commentBool" class="row">
+          <p class="col-md-offset-2">{{comment.comment}} By:<b>{{comment.author}}</b></p>
+        </div>
+      </div>
+      <div class="col-md-offset-1 slide" ng-show="item.addCommentsBool">
+        <form name="myCommentsForm">
+          <label for="com">Comment</label>
+          <input placeholder="comment" type="text" name="com" class="form-control" ng-model="comment.comment">
+          <label for="authorC">Author:</label>
+          <input class="form-control" type="text" name="authorC" placeholder="author" ng-model="comment.author">
           <br>
-          <h3 class="">
-            What can I do to help U.S. military veterans as an American citizen?
-          </h3>
-          <h4>
-            asked by anonymous.
-          </h4>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <br>
-            <div class="row">
-              <h4>
-                Dreamcatcher pabst letterpress, mlkshk PBR&B hashtag paleo retro 3 wolf moon austin banjo health goth tattooed banh mi flannel. 90's franzen kale chips, try-hard polaroid photo booth aesthetic ?
-              </h4>
-            </div>
-
-            <br>
-            <br>
-            <div class="row">
-              <div class="col-md-3">
-                <h5>
-                  Answered by John Smith
-                </h5>
-              </div>
-
-              <div class="col-md-9 text-left">
-                <h5 class="pull-left">
-                  Upvote
-                </h5>
-                <h5>DownVote</h5>
-                <h5>Answer</h5>
-                <!-- <i class="fa fa-plus fa-lg text-success pull-left"></i>
-                <i class="fa fa-minus fa-lg text-danger"></i>
-                <i class="fa fa-pencil fa-lg text-warning"></i> -->
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
+          <button ng-click="addComment(comment, item)" type="btn btn-primary">Add Comment</button>
+        </form>
       </div>
     </div>
   </div>
-</div>
+  </div>

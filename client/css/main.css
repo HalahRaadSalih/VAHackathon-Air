@@ -9,6 +9,13 @@ body {
 	border-radius: 0;
 	margin-bottom: 0;
 }
+
+.construct {
+	width: 100%;
+	height: 3em;
+	background: #e65212;
+}
+
 .navbar-brand>img {
 	top: 0;
 	height: 30px;
@@ -90,16 +97,111 @@ section.module.parallax-3 {
 }
 
 
-/* Code Pen Code By Zachary Brady */
+body {
+	font-size: 16px;
+}
 
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+img.display-image {
+	height: 9.375em;
+	width: 9.375em;
+	margin-left: 1em;
+}
 
-.banner {
-    background: url(http://www.lewis-mcchord.army.mil/84ca/images/handshake-u479.png) no-repeat 50% 50%;
-    background-size: cover;
-    width:100%;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
+.navbar {
+	border-radius: 0;
+}
+
+p.small {
+	font-size: .9em
+}
+
+.positive {
+	color: green;
+}
+
+.negative {
+	color: red;
+}
+
+.nothing {
+	color: blue;
+}
+
+.ng-hide-add { 
+	animation:0.5s lightSpeedOut ease; 
+}
+
+.ng-hide-remove {
+ animation:0.5s flipInX ease;
+}
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  100% {
+    transform: perspective(400px);
+    transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes lightSpeedOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes lightSpeedOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+}
+
+.animate-enter.animate-enter-active, .animate-leave {
+	animation:0.5s lightSpeedOut ease;
+}
+.animate-enter {
+	animation:0.5s lightSpeedOut ease;
+}
+.animate-leave.animate-leave-active, .animate-enter {
+	animation:0.5s lightSpeedOut ease;
 }
 
