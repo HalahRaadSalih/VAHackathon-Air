@@ -1,3 +1,5 @@
+var app = angular.module('air');
+
 app.controller("HomeController", function($scope, $location){
 
 });

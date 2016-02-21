@@ -1,11 +1,11 @@
 var app = angular.module('air', ['ngRoute']);
+
 app.config(function($routeProvider){
     $routeProvider.when('/', {
-<<<<<<< HEAD
         templateUrl: "./templates/home.html",
         controller: "HomeController"
     }).when('/posts', {
-        templateUrl: "./templates/posts.html",
+        templateUrl: "./views/templates/posts.html",
         controller: "PostsController"
     }).when('/contact', {
         templateUrl: "./templates/contact.html",
@@ -15,5 +15,5 @@ app.config(function($routeProvider){
         controller: "AboutController"
     }).otherwise({
         redirectTo: "/"
-    })
+    });
 });
