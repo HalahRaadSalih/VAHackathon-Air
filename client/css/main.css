@@ -78,3 +78,16 @@ section.module.parallax-3 {
     font-size: 160px;
   }
 }
+
+
+
+/*for contacts*/
+.big-icon{
+	font-size: 100px;
+	vertical-align: bottom;
+}
+
+.profile-pic{
+	max-width: 200px;
+	max-height: 200px;
+}

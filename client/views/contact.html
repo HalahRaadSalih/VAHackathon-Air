@@ -1,5 +1,22 @@
-<div class="container-fluid">
- <div class="jumbotron">
- 	<h1 class="text-success">Contact</h1>
- </div>
+<div class="container" ng-controller="ContactsController as contacts">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="jumbotron" ng-repeat="contact in contacts">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{contact.image}}" class="profile-pic">
+                    </div>
+                    <div class="col-md-6">
+                        <center><h3>{{contact.name}}</h3></center>
+                        <a href="{{contact.github}}"><i class="fa fa-github big-icon"></i></a>
+                        <a href="{{contact.linkedIn}}"><i class="fa fa-linkedin-square big-icon"></i></a>
+                    </div>
+                </div>
+                <p>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </div>
