@@ -2,11 +2,10 @@
 
 body {
 	font-size: 16px;
-	margin-bottom: 2em;
 }
 
 
-#navbar {
+.navbar {
 	border-radius: 0;
 	margin-bottom: 0;
 }
