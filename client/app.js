@@ -10,4 +10,8 @@ app.config(function($routeProvider){
         templateUrl: "/client/views/contact.html",
         controller: "ContactsController"
     })
+    .when('/dashboard', {
+        templateUrl: "/client/views/dashboard.html",
+        controller: "DashboardClient"
+    })
 });
