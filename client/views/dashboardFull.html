@@ -1,4 +1,4 @@
-
+<br>
 <a ng-click="showF()"><i class="fa fa-plus"></i> Submit Post</a></li>
 
 
@@ -29,22 +29,22 @@
   <div class="contaniner-fluid col-md-offset-1 col-md-10">
   <div>
 
-    <div class="slide" ng-repeat="item in items | filter:search.string | orderBy: category:sortReverse">
+  <div class="slide" ng-repeat="item in items | filter:search.string | orderBy: category:sortReverse">
     <div class="jumbotron slide">
       <div class="row slide">
-        <p>Rep: {{item.reputation}}</p>
         <img ng-src='{{item.image}}' alt="placebear"  class="col-md-4 display-image" />
         <h3 class="col-md-10"><b>{{item.title}}</b> <span href="#" ng-click="upVote(item)"><i class="fa fa-thumbs-o-up"></i></span> <span ng-click="downVote(item)"><i class="fa fa-thumbs-o-down"></i></span> <span ng-class="{ positive: item.votes > 0, negative: item.votes < 0, nothing: item.votes === 0}">{{item.votes}}</span></h3>
         <p class="col-md-8 text-left">{{item.description}}</p>
         <p class="col-md-offset-2 col-md-8 small"><time>{{item.createdAt | amCalendar}}</time> | postedBy: <b>{{item.author}} | <a ng-click="showComments(item)"><ng-pluralize count="item.comments.length"
-                    when="{'0': 'no comments yet',
-                        '1': 'comment',
-                           'other': 'comments'}">
+                    when="{'0': 'no answers yet',
+                        '1': 'answer',
+                           'other': 'answers'}">
             </ng-pluralize>: {{item.comments.length}}</a> | <a ng-click="addAComment(item)">add a comment</a></b></p>
       </div>
+
       <div ng-repeat="comment in item.comments track by $index" class="slide">
         <div ng-show="item.commentBool" class="row">
-          <p class="col-md-offset-2">{{comment.comment}} By:<b>{{comment.author}}</b></p>
+          <p class="col-md-offset-1"><b>Reputation</b>: {{item.reputation}}</p> <p class="col-md-offset-1"><b>Answer</b>: {{comment.comment}}</p> <p class="col-md-offset-1">By: <b>{{comment.author}}</b></p>
         </div>
       </div>
       <div class="col-md-offset-1 slide" ng-show="item.addCommentsBool">

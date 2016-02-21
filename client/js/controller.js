@@ -73,7 +73,7 @@ app.controller('DashboardFull', function($scope){
         addCommentsBool: false
     },
     {
-        title: 'Cairo Is Uber Cool',
+        title: 'I have been having a jaw clenching problem',
         description: "Bitters typewriter 8-bit, PBR&B vice cronut williamsburg pitchfork. Master cleanse locavore etsy, brunch williamsburg cold-pressed butcher yuccie craft beer waistcoat meditation swag blue bottle retro. Tattooed etsy vice try-hard kitsch jean shorts. Viral ugh franzen, waistcoat chambray four dollar toast tumblr slow-carb fixie literally put a bird on it poutine celiac. 8-bit celiac roof party normcore ethical meggings pinterest, four dollar toast semiotics. Fixie cornhole mlkshk, organic chillwave forage gluten-free butcher salvia paleo you probably haven't heard of them yuccie. Pabst hashtag hammock, fingerstache truffaut wolf tattooed.",
         image: "https://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif",
         author: 'anon',
