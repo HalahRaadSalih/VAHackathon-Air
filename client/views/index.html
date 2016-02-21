@@ -5,14 +5,14 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-resource.js"></script>
-
+	<link href='https://fonts.googleapis.com/css?family=Ramabhadra|Open+Sans+Condensed:300,300italic,700|Hind:400,300,500,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://bootswatch.com/sandstone/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="https://bootswatch.com/sandstone/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<link href="../css/main.css">
+	<link rel="stylesheet" href="/client/css/main.css">
 </head>
 <body>
-	<div class="navbar navbar-inverse">
+	<div id="navbar" class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand">
@@ -20,10 +20,9 @@
 				</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Welcome</a></li>
 				<li><a href="#/contacts">Contact</a></li>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Posts</a></li>
+				<li><a href="#/about">About</a></li>
+				<li><a href="#/auth">Login / Sign Up</a></li>
 			</ul>
 		</div>
 	</div>
@@ -32,9 +31,9 @@
 
 	</div>
 
-	<div class="navbar navbar-fixed-bottom navbar-inverse">
+	<div class="navbar navbar-fixed-bottom navbar-default">
 		<div class="container">
-			<p class="navbar-text">Cairo</p>
+			
 		</div>
 	</div>
 
