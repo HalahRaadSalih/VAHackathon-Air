@@ -22,7 +22,7 @@ app.use('/api', router.index);
 
 // always redirect to angular app for routes
 // are not registered
-app.get('*', function(req,res){
+app.get('/', function(req,res){
   res.sendFile(path.join(__dirname,'../client/views', 'index.html'));
 });
 
