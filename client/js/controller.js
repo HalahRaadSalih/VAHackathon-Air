@@ -5,4 +5,8 @@ app.controller('HomeController', function(){
 
 app.controller('ContactsController', function(){
 	console.log('Contacts')
-})
+});
+
+app.controller('DashboardClient', function(){
+	console.log('DashboardClient');
+});
