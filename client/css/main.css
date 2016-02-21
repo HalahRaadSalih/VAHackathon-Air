@@ -2,13 +2,19 @@
 
 body {
 	font-size: 16px;
-	margin-bottom: 2em;
 }
 
 
-#navbar {
+.navbar {
 	border-radius: 0;
 	margin-bottom: 0;
+}
+.navbar-brand>img {
+	top: 0;
+	height: 30px;
+	width: 200px;
+	padding: 0;
+	margin: 0;
 }
 
 .container {
@@ -82,3 +88,18 @@ section.module.parallax-3 {
 .dashboard{
 		background: #3E3F3A;
 }
+
+
+/* Code Pen Code By Zachary Brady */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+
+.banner {
+    background: url(http://www.lewis-mcchord.army.mil/84ca/images/handshake-u479.png) no-repeat 50% 50%;
+    background-size: cover;
+    width:100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
