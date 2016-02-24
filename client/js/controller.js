@@ -7,7 +7,7 @@ app.controller('ContactsController', function($scope){
 	$scope.contacts = [
 		{
 			name: 'Anabel Hoang',
-			image: 'https://lh3.googleusercontent.com/-vxtOFsB6c08/UtWelvFRt3I/AAAAAAAAHpU/VgWmi3EqqaQ/s200-no/anonymous_200.gif',
+			image: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAAoAAAAJDQ4NDIwZmVjLWYwNWItNDQwNC1hMTkyLTk1ODViNjE0MjRjMQ.jpg',
 			linkedIn: 'https://www.linkedin.com/in/anabelhoang',
 			github: ''
 		},
@@ -48,12 +48,162 @@ app.controller('ContactsController', function($scope){
 			github: 'https://github.com/Thatsedrich'
 		}
 	];
+});
+
+app.controller('DashboardFull', function($scope){
+	$scope.items = [
+    {
+        title: 'I live in Boise Idaho and I was woundering if there are any physicians that you would recomend?',
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum!",
+        image: "https://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif",
+        author: 'anon',
+        createdAt: Date.now(),
+        votes: 1,
+        reputation: 75,
+        favorite: false,
+        commentBool: false,
+        comments: [{
+            comment: 'Mentor',
+            author: 'Mentor-305'
+        },{
+            comment: 'Dr. anon at 555 main street knows his stuff here is his contact info',
+            author: 'Vet-555'
+        }
+        ],
+        addCommentsBool: false
+    },
+    {
+        title: 'I have been having a jaw clenching problem',
+        description: "Bitters typewriter 8-bit, PBR&B vice cronut williamsburg pitchfork. Master cleanse locavore etsy, brunch williamsburg cold-pressed butcher yuccie craft beer waistcoat meditation swag blue bottle retro. Tattooed etsy vice try-hard kitsch jean shorts. Viral ugh franzen, waistcoat chambray four dollar toast tumblr slow-carb fixie literally put a bird on it poutine celiac. 8-bit celiac roof party normcore ethical meggings pinterest, four dollar toast semiotics. Fixie cornhole mlkshk, organic chillwave forage gluten-free butcher salvia paleo you probably haven't heard of them yuccie. Pabst hashtag hammock, fingerstache truffaut wolf tattooed.",
+        image: "https://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif",
+        author: 'anon',
+        createdAt: Date.now(),
+        votes: 5,
+        reputation: 75,
+        favorite: false,
+        commentBool: false,
+        comments: [{
+            comment: 'coolski',
+            author: 'Mentor'
+        }],
+        addCommentsBool: false
+    },
+    {
+        title: "I haven't been feeling to great recently",
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis.",
+        author: 'Anon',
+        image: "https://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif",
+        createdAt: Date.now(),
+        votes: 30,
+        reputation: 75,
+        favorite: false,
+        commentBool: false,
+        comments: [{
+            comment: 'Mentor',
+            author: 'Mentor'
+        }],
+        addCommentsBool: false
+    },
+    {
+        title: 'VA clinicians you would recomend near Tucson AZ',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis.',
+        image: "https://cdn0.vox-cdn.com/images/verge/default-avatar.v9899025.gif",
+        author: 'anon',
+        createdAt: Date.now(),
+        votes: 0,
+        reputation: 75,
+        favorite: false,
+        commentBool: false,
+        comments: [{
+            comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis.',
+            author: 'Mentor'
+        }],
+        addCommentsBool: false
+    }];
+
+    $scope.showComments = function(item) {
+        if (item.commentBool === true) {
+            item.commentBool = false;
+        } else {
+            item.commentBool = true;
+        }
+    }
+
+    $scope.search = {
+        string: ''
+    }
+
+    $scope.comment = {
+    }
+
+    $scope.item = {
+        votes: 0,
+        favorite: false,
+        createdAt: Date.now(),
+        comments: []
+    };
+
+    $scope.showForm = false;
+
+
+    $scope.addAComment = function(item) {
+        if (item.addCommentsBool === true) {
+            item.addCommentsBool = false;
+        } else {
+            item.addCommentsBool = true;
+        }
+    }
+    $scope.showF = function() {
+        if ($scope.showForm === true) {
+            $scope.showForm = false;
+        } else {
+            $scope.showForm = true;
+        }
+        console.log('hit')
+    }
+    $scope.upVote = function(item) {
+        item.votes += 1;
+    }
+    $scope.downVote = function(item) {
+        item.votes -= 1;
+    }
+    $scope.addPost = function(item, myForm) {
+        if(myForm.$valid){
+            item.votes = 0;
+            item.createdAt = Date.now();
+            item.commentBool = false;
+            item.addCommentsBool = false;
+            $scope.items.push(item);
+            $scope.item = {};
+            $scope.showForm = false;
+        } else {
+            console.log(myForm);
+        }
+    }
+    $scope.addComment = function(comment, item){
+        item.comments.push(comment);
+        $scope.comment = {};
+        item.addCommentsBool = false;
+    }
+    $scope.sortReverse  = true;
 })
 
-app.controller('DashboardClient', function(){
-	console.log('DashboardClient');
-});
+app.animation('.slide', [function() {
+    return {
+        // make note that other events (like addClass/removeClass)
+        // have different function input parameters
+        enter: function(element, doneFn) {
+        jQuery(element).fadeIn(1000, doneFn)
+        // remember to call doneFn so that angular
+        // knows that the animation has concluded
+        },
 
-app.controller('DashboardFull', function(){
-	console.log('DashboardFull');
-});
+        move: function(element, doneFn) {
+        jQuery(element).fadeIn(1000, doneFn);
+        },
+
+        leave: function(element, doneFn) {
+        jQuery(element).fadeOut(1000, doneFn)
+        }
+    }
+}]);

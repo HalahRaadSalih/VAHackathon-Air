@@ -1,4 +1,4 @@
-var app = angular.module('air', ['ngRoute']);
+var app = angular.module('air', ['ngRoute','ngAnimate','angularMoment']);
 
 app.config(function($routeProvider){
     $routeProvider
@@ -12,7 +12,6 @@ app.config(function($routeProvider){
     })
     .when('/dashboard', {
         templateUrl: "/client/views/dashboard.html",
-        controller: "DashboardClient"
     })
     .when('/dashboardFull', {
         templateUrl: "/client/views/dashboardFull.html",
